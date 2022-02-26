@@ -1,0 +1,27 @@
+Application Information
+========================================
+
+This application is simple program to authorize credit card
+transactions using a simplified version of interchange message as input and output.
+Note that you do not need knowledge of standard ISO 8583 to complete this test.
+
+Application can be run in following way:
+========================================
+
+    All the request messages are kept in sample file such as request1.txt,request2.txt
+    located at the location src\main\resources\requests\
+    Please create input file at this location and follow the below steps
+	mvn clean install -U
+	cd target
+	java -jar CardTransactionAuthorization-1.0-SNAPSHOT.jar <inputfile1> <inputfile2> ...
+	You can pass multiple file names and it will generate the response files
+	for each input file.
+	Output file can be viewed at location target\classes\response\response1.txt
+	target\classes\response\response2.txt
+	Currently, the output file is named as response<SEQ>.txt but this is configurable.
+
+
+Few configurable aspects, you can configure many paths within the below file.
+src\main\authorize\requests.authorize.properties
+src\main\context\requests.file.properties
+src\main\context\requests.file.properties
